@@ -1,0 +1,46 @@
+package com.techgatha.resource;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.techgatha.model.BookUserCatalog;
+import com.techgatha.model.UserCatalog;
+import com.techgatha.service.BookCatalogService;
+import com.techgatha.service.BookDetailsService;
+import com.techgatha.service.BookOrderDetailsService;
+
+@RestController
+@RequestMapping("/catalog")
+public class BookCatalogResourceMultipleService {
+
+	@Autowired
+	private BookOrderDetailsService service;
+	
+	@Autowired
+	private BookDetailsService bookDetailsServcie;
+	
+	@GetMapping("/{email}")
+	public List<UserCatalog> getBooksPurchased(@PathVariable String email)
+	{
+		return service.getBooksOrdered(email);
+	}
+	@GetMapping("/wrapper/{email}")
+	public BookUserCatalog getBooksPurchasedWrapper(@PathVariable String email)
+	{
+		
+		
+		return service.getBooksOrderedFromWrapper(email);
+	}
+//	@GetMapping("/wrapper/{email}")
+//	public BookUserCatalog getBooksPurchasedWrapper(@PathVariable String email)
+//	{
+//		
+//		return service.getBooksOrderedFromWrapper(email);
+//	}
+	
+}

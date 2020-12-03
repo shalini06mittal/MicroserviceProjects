@@ -1,0 +1,6 @@
+
+spring.application.name=ZUUL-GATEWAY
+server.port=9081
+zuul.routes.product-api.path=/api/*
+zuul.routes.product-api.service-id=PRODUCT
+# lcalhost:8081/api/products

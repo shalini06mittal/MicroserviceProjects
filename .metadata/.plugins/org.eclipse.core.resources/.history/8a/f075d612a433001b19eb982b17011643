@@ -1,0 +1,5 @@
+package com.eduramp.ms.CurrencyExchangeService.controller;
+
+public class CurrencyExchangeController {
+
+}

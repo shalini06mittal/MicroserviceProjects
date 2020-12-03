@@ -1,0 +1,5 @@
+package com.eduramp.ms.CurrencyExchangeService.service;
+
+public class ForexFeignClient {
+
+}

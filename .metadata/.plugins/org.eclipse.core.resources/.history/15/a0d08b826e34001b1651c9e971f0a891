@@ -1,0 +1,73 @@
+package com.techgatha.resource;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.techgatha.model.BookOrder;
+import com.techgatha.model.BookOrderWrapper;
+import com.techgatha.repository.BookOrderRepository;
+
+@RestController
+@RequestMapping("/orders")
+public class BookOrderResource {
+
+	@Autowired
+	BookOrderRepository repository;
+
+
+	@GetMapping("/{email}")
+	public List<BookOrder> getBooksOrderedByUser(@PathVariable String email)
+	{
+		List<BookOrder> orders = new ArrayList<>();
+		return repository.findByEmail(email).stream()
+				.map(order -> 
+				{
+					BookOrder obj = new BookOrder();
+					obj.setOrderno(order.getOrderno());
+					obj.setBookid(order.getBookid());
+					obj.setDatetime(order.getDatetime());
+					return obj;
+				}).collect(Collectors.toList());
+	}
+
+	//Map<String, List<BookOrder>> map;
+	@GetMapping("/wrapper/{email}")
+	public BookOrderWrapper getBooksOrderedByUserWrapper(@PathVariable String email)
+	{
+		BookOrderWrapper wrapper = new BookOrderWrapper();
+		List<BookOrder> orders = repository.findByEmail(email);
+		// if not empty => Userservice => memberType
+		String memberType = null;
+		if(orders!=null && orders.size() > 0)
+		{
+			memberType = "GOLD";// userservice
+			wrapper.setMemberType(memberType);
+			wrapper.setOrders(orders);
+//			orders.stream()
+//					.map(order -> 
+//					{
+//						BookOrder obj = new BookOrder();
+//						obj.setBookid(order.getBookid());
+//						obj.setDatetime(order.getDatetime());
+//						return obj;
+//					}).collect(Collectors.toList());
+		}
+		else {
+			memberType = "NOT A MEMBER";
+			wrapper.setMemberType(memberType);
+		}
+		System.out.println(wrapper);
+		RestTemplate template = new RestTemplate();
+		System.out.println(template.getForObject("http://techgatha.com/characters.json", String.class));
+		return wrapper;
+	}
+
+}

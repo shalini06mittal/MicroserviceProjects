@@ -1,0 +1,13 @@
+package com.techgatha.zuul;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ZuulProxyGatewayApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ZuulProxyGatewayApplication.class, args);
+	}
+
+}

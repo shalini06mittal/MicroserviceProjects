@@ -1,0 +1,26 @@
+package com.techgatha.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.techgatha.model.BookCatalog;
+
+@Service
+public class BookDetailsService {
+
+	@Autowired
+	private BookFeignClient bookclient;
+	
+	@HystrixCommand(fallbackMethod = "getFallbackBookById")
+	public BookCatalog getBookById(String bookid)
+	{
+		if(bookid.equals("B1"))
+			throw new RuntimeException("Book unavailble");
+		return this.bookclient.getBookDetails1(bookid);
+	}
+	public BookCatalog getFallbackBookById(String bookid)
+	{
+		return new BookCatalog("", "", 0, "");
+	}
+}

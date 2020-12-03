@@ -1,0 +1,13 @@
+package com.eduramp.server.EurekaServerERDemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EurekaServerErDemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EurekaServerErDemoApplication.class, args);
+	}
+
+}

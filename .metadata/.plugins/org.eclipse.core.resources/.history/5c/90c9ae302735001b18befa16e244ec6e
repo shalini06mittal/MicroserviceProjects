@@ -1,0 +1,17 @@
+package com.techgatha.cb;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+@SpringBootApplication
+public class CircuitBreakerDemoApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(CircuitBreakerDemoApplication.class, args);
+		MyService service = context.getBean(MyService.class);
+		System.out.println("Making 40 consecutive Requests");
+		
+	}
+
+}

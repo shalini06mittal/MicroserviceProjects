@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Product.java&apos; to &apos;ProductWeb/src/main/java/com.techgatha.web&apos;&#x0A;- Original project: &apos;ProductServer&apos;&#x0A;- Destination element: &apos;ProductWeb/src/main/java/com.techgatha.web&apos;&#x0A;- Original element: &apos;com.techgatha.model.Product.java&apos;" description="Copy compilation unit" destination="=ProductWeb/src\/main\/java&lt;com.techgatha.web" element1="/src\/main\/java&lt;com.techgatha.model{Product.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1606978133416" units="1" version="1.0"/>
+</session>

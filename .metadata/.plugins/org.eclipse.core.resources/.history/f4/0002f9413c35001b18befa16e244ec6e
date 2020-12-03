@@ -1,0 +1,3 @@
+
+spring.cloud.config.server.git.uri=/Users/Shalini/Desktop/EdurampMSTraining/cloud-config-repo
+server.port=8888

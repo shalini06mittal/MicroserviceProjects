@@ -1,0 +1,13 @@
+package com.techgatha.cb;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TurbineDemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TurbineDemoApplication.class, args);
+	}
+
+}
