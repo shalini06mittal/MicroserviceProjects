@@ -1,5 +1,0 @@
-package com.eduramp.ms.ForexService.repository;
-
-public interface ExchangeRepository {
-
-}

@@ -3,6 +3,7 @@
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
 			<item value="/Users/Shalini/Desktop/EdurampMSTraining"/>
+			<item value="/Users/Shalini/Desktop/EdurampMSTraining/HystrixTurbineDemo"/>
 			<item value="/Users/Shalini/Desktop/EdurampMSTraining/EurekaServerDemo"/>
 		</list>
 		<list key="projectNameTemplate">

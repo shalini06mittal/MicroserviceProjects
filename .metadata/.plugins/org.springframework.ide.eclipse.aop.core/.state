@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="TurbineDemo"/>
 <aop-project name="EurekaServerERDemo"/>
+<aop-project name="BookMailingService"/>
+<aop-project name="CloudConfigClient"/>
 <aop-project name="ForexService"/>
-<aop-project name="CurrencyExchangeService"/>
+<aop-project name="SwaggerOpenAPIDemo"/>
+<aop-project name="ProductWeb"/>
 <aop-project name="EurekaServerDemo"/>
+<aop-project name="ZipkinMS1"/>
+<aop-project name="ZipkinMS3"/>
+<aop-project name="ZuulProxyGateway"/>
+<aop-project name="BookCatalogService"/>
+<aop-project name="CircuitBreakerDemo"/>
+<aop-project name="BookService"/>
+<aop-project name="CloudConfigServerDemo"/>
+<aop-project name="ProductServer"/>
+<aop-project name="CurrencyExchangeService"/>
+<aop-project name="ZipkinMS2"/>
 </aop-reference-model>

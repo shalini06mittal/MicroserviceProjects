@@ -13,7 +13,7 @@ import com.netflix.zuul.exception.ZuulException;
 
 @Component
 public class PreFilter extends ZuulFilter{
-
+// userdb => cookie=> jsessionid
 	Logger log = LoggerFactory.getLogger(this.getClass());
 	@Override
 	public boolean shouldFilter() {

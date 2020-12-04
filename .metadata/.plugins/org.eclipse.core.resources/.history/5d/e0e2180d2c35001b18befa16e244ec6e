@@ -1,7 +1,0 @@
-management.endpoints.web.exposure.include=*
-
-hystrix.dashboard.proxyStreamAllowList=*
-server.port=9090
-spring.application.name=TURBINE
-turbine.appConfig= book-catalog-service, circuit-breaker
-turbine.clusterNameExpression= new String("default")
